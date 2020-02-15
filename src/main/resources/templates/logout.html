@@ -1,0 +1,18 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}"lang="en">
+<head>
+    <title>Déconnexion</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info"><h3>Vous êtes correctement déconnecté.</h3></li>
+        </ul>
+        <a th:href="@{/index}">Retour à la connexion</a>
+    </div>
+</div>
+
+</body>
+</html>
