@@ -47,7 +47,7 @@ public class AppController {
                 "--server", "192.168.1.100",
                 "--username", "mrtest",
                 "--password", "Bonjour01",
-                "--vmfolder", "Dev",
+                "--vmfolder", "SUPINFO",
                 "--vmname", name,
                 "--cleardata", "true",
                 "--datastore", "VMDatastore02",

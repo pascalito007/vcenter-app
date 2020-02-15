@@ -48,7 +48,7 @@ public class WebSecurityConfigAD extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AuthenticationProvider activeDirectoryLdapAuthenticationProvider() {
-        ActiveDirectoryLdapAuthenticationProvider provider = new ActiveDirectoryLdapAuthenticationProvider("labs.lan", "ldap://192.168.1.1:389");
+        ActiveDirectoryLdapAuthenticationProvider provider = new ActiveDirectoryLdapAuthenticationProvider("cloudis305417.lan", "ldap://192.168.1.150:389");
         provider.setConvertSubErrorCodesToExceptions(true);
         provider.setUseAuthenticationRequestCredentials(true);
         return provider;
