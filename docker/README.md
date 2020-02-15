@@ -1,6 +1,6 @@
-# vSphere Automation SDK for Java Dockerfile
+# front end app for managing vsphere infra
 
-This contains a dockerfile to deploy the vsphere app that interract to deployed vcenter infra
+This contains a dockerfile to deploy the front end app that interract to deployed vsphere infra
 
 ## Building the container
 
