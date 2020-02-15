@@ -1,5 +1,5 @@
 FROM maven:latest
-MAINTAINER renoufa@vmware.com
+MAINTAINER pasciano007@gmail.com
 
 # Set the working directory to /work
 WORKDIR /work
@@ -11,9 +11,9 @@ RUN apt-get -y install vim \
     git
 
 # Clone the project
-RUN git clone https://github.com/vmware/vsphere-automation-sdk-java.git
+RUN git clone  https://github.com/pascalito007/vcenter-app.git
 
-# Build the samples
-WORKDIR /work/vsphere-automation-sdk-java/
+# Build the project
+WORKDIR /work/vsphere-tp/
 RUN mvn initialize; mvn clean install
 CMD ["/bin/bash"]

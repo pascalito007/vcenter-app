@@ -19,11 +19,11 @@ public class AppController {
     List<MachinVirtuel> machines ;
     MachinVirtuel vm;
     String args[] ={
-            "--server", "192.168.1.15",
-            "--username", "administrator@vsphere.local",
-            "--password", "Informatique@007",
+            "--server", "192.168.1.100",
+            "--username", "mrtest",
+            "--password", "Bonjour01",
             "--skip-server-verification",
-            "--datacenter", "DTC-EUROPE-01"};
+            "--datacenter", "DC01"};
 
     @GetMapping(value = {"/", "/index"})
     public String index(Model model) throws Exception {
@@ -44,18 +44,18 @@ public class AppController {
     @GetMapping(value = "/delete/{name}")
     public String delete(Model model, @PathVariable String name) throws Exception {
         String args[] ={
-                "--server", "192.168.1.15",
-                "--username", "administrator@vsphere.local",
-                "--password", "Informatique@007",
+                "--server", "192.168.1.100",
+                "--username", "mrtest",
+                "--password", "Bonjour01",
                 "--vmfolder", "Dev",
                 "--vmname", name,
                 "--cleardata", "true",
-                "--datastore", "datastore1",
-                "--host", "esxi01.labs.lan",
+                "--datastore", "VMDatastore02",
+                "--host", "esxi01.cloudis305417.lan",
                 "--cluster", "Cluster",
-                "--standardportgroup", "LAN01",
+                "--standardportgroup", "Public VM Network",
                 "--skip-server-verification",
-                "--datacenter", "DTC-EUROPE-01"};
+                "--datacenter", "DC01"};
         CreateBasicVM.main(args);
         return "redirect:index";
     }
@@ -70,17 +70,17 @@ public class AppController {
     public String add(Model model, @ModelAttribute MachinVirtuel vm) throws Exception {
         if(null != vm.getName() && null != vm.getIpAddress()){
             String args[] ={
-                    "--server", "192.168.1.15",
-                    "--username", "administrator@vsphere.local",
-                    "--password", "Informatique@007",
-                   "--vmfolder", "Dev",
+                    "--server", "192.168.1.100",
+                    "--username", "mrtest",
+                    "--password", "Bonjour01",
+                   "--vmfolder", "SUPINFO",
                     "--vmname", vm.getName(),
-                    "--datastore", "datastore1",
-                    "--host", "esxi01.labs.lan",
-                    "--cluster", "Cluster",
-                    "--standardportgroup", "LAN01",
+                    "--datastore", "VMDatastore02",
+                    "--host", "esxi01.cloudis305417.lan",
+                    "--cluster", "CLU01",
+                    "--standardportgroup", "Public VM Network",
                     "--skip-server-verification",
-                    "--datacenter", "DTC-EUROPE-01"};
+                    "--datacenter", "DC01"};
             CreateBasicVM.main(args);
         }
         return "redirect:index";
