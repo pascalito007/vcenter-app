@@ -105,6 +105,9 @@ public class ListVMs extends SamplesAbstractBase {
         }
         List<Summary> vmList = this.vmService.list(bldr.build());
         for (Summary vmSummary : vmList) {
+            //System.out.println(vmSummary._getDynamicField("backup"));
+            //System.out.println(vmSummary._getDataValue().getFields());
+            System.out.println("**********");
             machines.add(new MachinVirtuel(vmSummary.getName(), null, vmSummary.getPowerState(), null));
         }
     }

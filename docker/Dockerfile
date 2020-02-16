@@ -14,6 +14,7 @@ RUN apt-get -y install vim \
 RUN git clone  https://github.com/pascalito007/vcenter-app.git
 
 # Build the project
-WORKDIR /work/vsphere-tp/
+WORKDIR /work/vcenter-app/
 RUN mvn initialize; mvn clean install
-CMD ["/bin/bash"]
+# CMD ["/bin/bash"]
+CMD ["java", "-jar", "./target/adconnect-0.0.1-SNAPSHOT.jar"]
