@@ -16,21 +16,21 @@ import java.util.List;
 @RequestMapping("/")
 public class AppController {
 
-    List<MachinVirtuel> machines ;
+
+    List<MachinVirtuel> machines;
     MachinVirtuel vm;
-    String args[] ={
-            "--server", "192.168.1.15",
-            "--username", "administrator@vsphere.local",
-            "--password", "Informatique@007",
+    String args[] = {
+            "--server", "192.168.1.100",
+            "--username", "mrbmw",
+            "--password", "Bonjour01",
             "--skip-server-verification",
-            "--datacenter", "DTC-EUROPE-01"};
+            "--datacenter", "DC01"};
 
     @GetMapping(value = {"/", "/index"})
     public String index(Model model) throws Exception {
         machines = new ArrayList<>();
 
         ListVMs.main(args, machines);
-        //machines.forEach(System.out::println);
         model.addAttribute("machines", machines);
         model.addAttribute("vm", new MachinVirtuel());
         return "index";
@@ -58,14 +58,15 @@ public class AppController {
                 "--datacenter", "DTC-EUROPE-01"};*/
 
         String args[] = {
-                "--server", "192.168.1.15",
-                "--username", "administrator@vsphere.local",
+                "--server", "192.168.1.100",
+                "--username", "mrbmw",
                 "--password", "Informatique@007",
                 "--vmname", name,
                 "--cleardata", "true",
                 "--cluster", "Cluster",
+                "--standardportgroup", vm.getNetwork(),
                 "--skip-server-verification",
-                "--datacenter", "DTC-EUROPE-01"};
+                "--datacenter", "DC01"};
         CreateBasicVM.main(args);
         return "redirect:index";
     }
@@ -78,7 +79,7 @@ public class AppController {
 
     @PostMapping("/add")
     public String add(Model model, @ModelAttribute MachinVirtuel vm) throws Exception {
-        if(null != vm.getName() && null != vm.getIpAddress()){
+        if (null != vm.getName() && null != vm.getIpAddress()) {
             /*String args[] ={
                     "--server", "192.168.1.15",
                     "--username", "administrator@vsphere.local",
@@ -92,18 +93,18 @@ public class AppController {
                     "--skip-server-verification",
                     "--datacenter", "DTC-EUROPE-01"};*/
 
-            String args[] ={
-                    "--server", "192.168.1.15",
-                    "--username", "administrator@vsphere.local",
-                    "--password", "Informatique@007",
-                   "--vmfolder", "Dev",
+            String args[] = {
+                    "--server", "192.168.1.100",
+                    "--username", "mrbmw",
+                    "--password", "Bonjour01",
+                    "--vmfolder", "bmw",
                     "--vmname", vm.getName(),
                     "--datastore", "datastore1",
                     "--host", "esxi01.labs.lan",
                     "--cluster", "Cluster",
-                    "--standardportgroup", "VM Network",
+                    "--standardportgroup", vm.getNetwork(),
                     "--skip-server-verification",
-                    "--datacenter", "DTC-EUROPE-01"};
+                    "--datacenter", "DC01"};
             CreateBasicVM.main(args);
         }
         return "redirect:index";

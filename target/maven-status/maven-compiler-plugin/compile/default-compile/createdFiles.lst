@@ -45,6 +45,7 @@ tp/vsphere/vcenter/helpers/PlacementHelper.class
 tp/vsphere/vcenter/vcha/VchaClusterOps.class
 tp/vsphere/vcenter/vm/list/ListVMs.class
 tp/vsphere/vcenter/vm/create/exhaustivevm/CreateExhaustiveVM.class
+tp/vsphere/User.class
 tp/vsphere/contentlibrary/helpers/ItemDownloadHelper.class
 tp/vsphere/vmc/sddc/VsphereConnection.class
 tp/vsphere/appliance/services/ServicesWorkflow.class

@@ -14,6 +14,5 @@ public class MachinVirtuel {
     private String name;
     private String ipAddress;
     private PowerTypes.State status;
-    private String lastBackup;
-
+    private String network;
 }

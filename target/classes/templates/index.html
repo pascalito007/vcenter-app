@@ -40,6 +40,11 @@
             </div>
 
             <div class="form-group col-md-6">
+                <label for="network" class="">Network</label>
+                <input id="network" type="text" class="form-control" th:field="*{network}"/>
+            </div>
+
+            <div class="form-group col-md-6">
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Ajouter VM</button>
             </div>
         </div>
@@ -58,7 +63,6 @@
                 <td th:text="${vm.name}"></td>
                 <td th:text="${vm.ipAddress}"></td>
                 <td th:text="${vm.status}"></td>
-                <td th:text="${vm.lastBackup}"></td>
 <!--                <td><i class="fa fa-trash"></i>      <i class="fa fa-save"></i></td>-->
                 <td><a th:href="@{'/delete/' + ${vm.name}}" th:text="Delete"></a></td>
                 <td><a th:href="@{'/backup/' + ${vm.name}}" th:text="Backup"></a></td>
