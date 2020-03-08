@@ -16,5 +16,6 @@ RUN git clone  https://github.com/pascalito007/vcenter-app.git
 # Build the project
 WORKDIR /work/vcenter-app/
 RUN mvn initialize; mvn clean install
+EXPOSE 8080
 #CMD ["/bin/bash"]
 ENTRYPOINT ["java", "-jar", "./target/adconnect-0.0.1-SNAPSHOT.jar"]
