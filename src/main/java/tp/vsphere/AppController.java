@@ -100,7 +100,6 @@ public class AppController {
                     "--vmfolder", "bmw",
                     "--vmname", vm.getName(),
                     "--datastore", "datastore1",
-                    "--host", "esxi01.labs.lan",
                     "--cluster", "Cluster",
                     "--standardportgroup", vm.getNetwork(),
                     "--skip-server-verification",
