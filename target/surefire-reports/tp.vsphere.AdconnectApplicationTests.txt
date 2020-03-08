@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: tp.vsphere.AdconnectApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.625 s - in tp.vsphere.AdconnectApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.418 s <<< FAILURE! - in tp.vsphere.AdconnectApplicationTests
+contextLoads  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: java.io.IOException: Cannot run program "powershell.exe": error=2, No such file or directory
+Caused by: java.io.IOException: error=2, No such file or directory
+
