@@ -100,7 +100,7 @@ public class AppController {
                     "--vmfolder", "bmw",
                     "--vmname", vm.getName(),
                     "--datastore", "datastore1",
-                    "--cluster", "Cluster",
+                    "--cluster", "CLU01",
                     "--standardportgroup", vm.getNetwork(),
                     "--skip-server-verification",
                     "--datacenter", "DC01"};
