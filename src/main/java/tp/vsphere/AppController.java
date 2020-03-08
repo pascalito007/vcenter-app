@@ -21,7 +21,7 @@ public class AppController {
     MachinVirtuel vm;
     String args[] = {
             "--server", "192.168.1.100",
-            "--username", "mrbmw",
+            "--username", "adminvcenter",
             "--password", "Bonjour01",
             "--skip-server-verification",
             "--datacenter", "DC01"};
@@ -59,7 +59,7 @@ public class AppController {
 
         String args[] = {
                 "--server", "192.168.1.100",
-                "--username", "mrbmw",
+                "--username", "adminvcenter",
                 "--password", "Bonjour01",
                 "--vmname", name,
                 "--cleardata", "true",
@@ -95,7 +95,7 @@ public class AppController {
 
             String args[] = {
                     "--server", "192.168.1.100",
-                    "--username", "mrbmw",
+                    "--username", "adminvcenter",
                     "--password", "Bonjour01",
                     "--vmfolder", "bmw",
                     "--vmname", vm.getName(),
