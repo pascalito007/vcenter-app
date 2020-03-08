@@ -60,10 +60,10 @@ public class AppController {
         String args[] = {
                 "--server", "192.168.1.100",
                 "--username", "mrbmw",
-                "--password", "Informatique@007",
+                "--password", "Bonjour01",
                 "--vmname", name,
                 "--cleardata", "true",
-                "--cluster", "Cluster",
+                "--cluster", "CLU01",
                 "--standardportgroup", vm.getNetwork(),
                 "--skip-server-verification",
                 "--datacenter", "DC01"};
